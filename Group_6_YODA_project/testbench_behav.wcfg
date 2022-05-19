@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="testbench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="167.773 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,166.446 ns"></ZoomEndTime>
+      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="159"></NameColumnWidth>
+      <ValueColumnWidth column_width="90"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wvobject type="divider" fp_name="divider30">
+      <obj_property name="label">testbench</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="group23" type="group">
+      <obj_property name="label">testbench_initial</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/SIZE" type="array">
+         <obj_property name="ElementShortName">SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">SIZE[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/freq" type="array">
+         <obj_property name="ElementShortName">freq[31:0]</obj_property>
+         <obj_property name="ObjectShortName">freq[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/interval" type="array">
+         <obj_property name="ElementShortName">interval[2:0]</obj_property>
+         <obj_property name="ObjectShortName">interval[2:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/done" type="logic">
+         <obj_property name="ElementShortName">done</obj_property>
+         <obj_property name="ObjectShortName">done</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/enable" type="logic">
+         <obj_property name="ElementShortName">enable</obj_property>
+         <obj_property name="ObjectShortName">enable</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group24" type="group">
+      <obj_property name="label">Audio_samples</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/sine_1" type="array">
+         <obj_property name="ElementShortName">sine_1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">sine_1[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/sine_2" type="array">
+         <obj_property name="ElementShortName">sine_2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">sine_2[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/sine_3" type="array">
+         <obj_property name="ElementShortName">sine_3[31:0]</obj_property>
+         <obj_property name="ObjectShortName">sine_3[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider31">
+      <obj_property name="label">Interval_max_&amp;_min</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="group25" type="group">
+      <obj_property name="label">Interval_1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/testbench/min_1" type="array">
+         <obj_property name="ElementShortName">min_1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">min_1[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/max_1" type="array">
+         <obj_property name="ElementShortName">max_1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">max_1[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group26" type="group">
+      <obj_property name="label">Interval_2</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/testbench/min_2" type="array">
+         <obj_property name="ElementShortName">min_2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">min_2[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/max_2" type="array">
+         <obj_property name="ElementShortName">max_2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">max_2[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group27" type="group">
+      <obj_property name="label">Interval_3</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/testbench/min_3" type="array">
+         <obj_property name="ElementShortName">min_3[31:0]</obj_property>
+         <obj_property name="ObjectShortName">min_3[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/max_3" type="array">
+         <obj_property name="ElementShortName">max_3[31:0]</obj_property>
+         <obj_property name="ObjectShortName">max_3[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider32">
+      <obj_property name="label">filtered values</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="group28" type="group">
+      <obj_property name="label">Filter_min_sd</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/testbench/clockRate" type="other">
+         <obj_property name="ElementShortName">clockRate</obj_property>
+         <obj_property name="ObjectShortName">clockRate</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/std_min_1" type="array">
+         <obj_property name="ElementShortName">std_min_1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">std_min_1[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/std_min_2" type="array">
+         <obj_property name="ElementShortName">std_min_2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">std_min_2[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/std_min_3" type="array">
+         <obj_property name="ElementShortName">std_min_3[31:0]</obj_property>
+         <obj_property name="ObjectShortName">std_min_3[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group29" type="group">
+      <obj_property name="label">FIlter_max_sd</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/testbench/std_max_1" type="array">
+         <obj_property name="ElementShortName">std_max_1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">std_max_1[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/std_max_2" type="array">
+         <obj_property name="ElementShortName">std_max_2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">std_max_2[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/std_max_3" type="array">
+         <obj_property name="ElementShortName">std_max_3[31:0]</obj_property>
+         <obj_property name="ObjectShortName">std_max_3[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

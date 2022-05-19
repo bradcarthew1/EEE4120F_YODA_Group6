@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/georg/Desktop/UCT/4th year 1st Semester/EEE4120F - High Performance Embedded System/YODA project/Group_6_YODA_project/Group_6_YODA_project.srcs/sim_1/new/audio_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module audio_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/georg/Desktop/UCT/4th year 1st Semester/EEE4120F - High Performance Embedded System/YODA project/Group_6_YODA_project/Group_6_YODA_project.srcs/sim_1/new/min_max.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module min_max
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/georg/Desktop/UCT/4th year 1st Semester/EEE4120F - High Performance Embedded System/YODA project/Group_6_YODA_project/Group_6_YODA_project.srcs/sim_1/new/std_dev.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module std_dev
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/georg/Desktop/UCT/4th year 1st Semester/EEE4120F - High Performance Embedded System/YODA project/Group_6_YODA_project/Group_6_YODA_project.srcs/sim_1/new/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench

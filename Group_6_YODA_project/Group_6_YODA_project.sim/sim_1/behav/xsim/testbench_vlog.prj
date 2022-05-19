@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Group_6_YODA_project.srcs/sim_1/new/audio_gen.v" \
+"../../../../Group_6_YODA_project.srcs/sim_1/new/min_max.v" \
+"../../../../Group_6_YODA_project.srcs/sim_1/new/std_dev.v" \
+"../../../../Group_6_YODA_project.srcs/sim_1/new/testbench.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
