@@ -46,16 +46,16 @@ always @(negedge clk) begin
             max_std_dev = (max_sum*0.5)**(0.5); //find the maximum standard deviation
 //            $display("%d %d",min_sum, max_sum);
 //            $display("%d %d",min_std_dev, max_std_dev);
-            if ((min_1 <= min_mean+min_std_dev) && (min_1 >= min_mean-min_std_dev)) begin
+            if ((min_1 <= min_mean+min_std_dev) && (min_1 >= min_mean-min_std_dev)) begin //if the first minimum value is within 1 standard deviation
                 std_min_1 = min_1; 
             end
-            if ((min_2 <= min_mean+min_std_dev) && (min_2 >= min_mean-min_std_dev)) begin
+            if ((min_2 <= min_mean+min_std_dev) && (min_2 >= min_mean-min_std_dev)) begin //if the second minimum value is within 1 standard deviation
                 std_min_2 = min_2; 
             end
-            if ((max_1 <= max_mean+max_std_dev) && (max_1 >= max_mean-max_std_dev)) begin
+            if ((max_1 <= max_mean+max_std_dev) && (max_1 >= max_mean-max_std_dev)) begin //if the first maximum value is within 1 standard deviation
                 std_max_1 = max_1; 
             end
-            if ((max_2 <= max_mean+max_std_dev) && (max_2 >= max_mean-max_std_dev)) begin
+            if ((max_2 <= max_mean+max_std_dev) && (max_2 >= max_mean-max_std_dev)) begin //if the second maximum value is within 1 standard deviation
                 std_max_2 = max_2; 
             end
         end else if (interval == 3) begin //if there are 3 interval segments
@@ -67,24 +67,24 @@ always @(negedge clk) begin
             max_sum = (max_1-max_mean)**2 + (max_2-max_mean)**2+ (max_3-max_mean)**2; //find the sum of the squares of the maximum values
             min_std_dev = (min_sum*0.33333333)**(0.5); //find the minimum standard deviation
             max_std_dev = (max_sum*0.33333333)**(0.5); //find the maximum standard deviation
-            $display("%d %d",min_mean, max_mean);
-            $display("%d %d",min_std_dev, max_std_dev);
-            if ((min_1 <= min_mean+min_std_dev) && (min_1 >= min_mean-min_std_dev)) begin
+//             $display("%d %d",min_mean, max_mean);
+//             $display("%d %d",min_std_dev, max_std_dev);
+            if ((min_1 <= min_mean+min_std_dev) && (min_1 >= min_mean-min_std_dev)) begin //if the first minimum value is within 1 standard deviation
                 std_min_1 = min_1; 
             end
-            if ((min_2 <= min_mean+min_std_dev) && (min_2 >= min_mean-min_std_dev)) begin
+            if ((min_2 <= min_mean+min_std_dev) && (min_2 >= min_mean-min_std_dev)) begin //if the second minimum value is within 1 standard deviation
                 std_min_2 = min_2; 
             end
-            if ((min_3 <= min_mean+min_std_dev) && (min_3 >= min_mean-min_std_dev)) begin
+            if ((min_3 <= min_mean+min_std_dev) && (min_3 >= min_mean-min_std_dev)) begin //if the third minimum value is within 1 standard deviation
                 std_min_3 = min_3; 
             end
-            if ((max_1 <= max_mean+max_std_dev) && (max_1 >= max_mean-max_std_dev)) begin
+            if ((max_1 <= max_mean+max_std_dev) && (max_1 >= max_mean-max_std_dev)) begin //if the first maximum value is within 1 standard deviation
                 std_max_1 = max_1; 
             end
-            if ((max_2 <= max_mean+max_std_dev) && (max_2 >= max_mean-max_std_dev)) begin
+            if ((max_2 <= max_mean+max_std_dev) && (max_2 >= max_mean-max_std_dev)) begin //if the second maximum value is within 1 standard deviation
                 std_max_2 = max_2; 
             end
-            if ((max_3 <= max_mean+max_std_dev) && (max_3 >= max_mean-max_std_dev)) begin
+            if ((max_3 <= max_mean+max_std_dev) && (max_3 >= max_mean-max_std_dev)) begin //if the third maximum value is within 1 standard deviation
                 std_max_3 = max_3; 
             end
             
