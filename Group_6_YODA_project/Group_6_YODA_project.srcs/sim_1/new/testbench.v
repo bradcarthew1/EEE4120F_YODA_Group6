@@ -1,6 +1,11 @@
 `timescale 1ns / 1ps
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//Engineers: Bradley Carthew, Nathanael Thomas, Thomas Stern, Mohammed-Bilaal Sheik Hoosen
+//Group: 6
+//Project Name: EEE4120F YODA Project
+//Description: A testbench module used to initialise and connect the modules.
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
-//testbench module used to initialise and connect the modules
 module testbench;
     reg clk; //defines the clock line
     wire [31:0] sine_1, sine_2, sine_3, min_1, max_1, min_2, max_2, min_3, max_3; //defines the audio_gen output wires, and min_max output wires
