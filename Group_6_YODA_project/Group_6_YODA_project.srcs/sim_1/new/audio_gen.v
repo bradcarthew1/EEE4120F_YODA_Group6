@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: University of Cape Tonw
+// Company: University of Cape Town
 // Engineer: Bradley Carthew, Nathanael Thomas, Thomas Stern, Mohammed-Bilaal Sheik Hoosen
-// 
+// Group: 6
 // Create Date: 05/19/2022 09:55:57 AM
 // Design Name: Audio Generator
 // Module Name: audio_gen
