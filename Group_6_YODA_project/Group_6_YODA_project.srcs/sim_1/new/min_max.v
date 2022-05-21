@@ -1,15 +1,15 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: University of Cape Town
-// Engineer: Thomas Stern (STRTHO008), Bradley Carthew (CRTBRA002)
+// Engineer: Bradley Carthew, Nathanael Thomas, Thomas Stern, Mohammed-Bilaal Sheik Hoosen
 // 
 // Create Date: 10.05.2022 20:04:06
-// Design Name: Ma
+// Design Name: Minimum and Maximum Value Finder
 // Module Name: min_max
 // Project Name: EEE4120F YODA Project
 // Target Devices: 
 // Tool Versions: 
-// Description: 
+// Description: Finds the minimum and maximum values from the values fed into the module.
 // 
 // Dependencies: 
 // 
