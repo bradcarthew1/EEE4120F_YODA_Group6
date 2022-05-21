@@ -1,12 +1,12 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: Galactic Republic
+// Company: University of Cape Town
 // Engineer: Thomas Stern (STRTHO008), Bradley Carthew (CRTBRA002)
 // 
 // Create Date: 10.05.2022 20:04:06
-// Design Name: Signal Processing
+// Design Name: Ma
 // Module Name: min_max
-// Project Name: YODA Digital Accelerator
+// Project Name: EEE4120F YODA Project
 // Target Devices: 
 // Tool Versions: 
 // Description: 
@@ -28,18 +28,18 @@ module min_max(
     output reg [31:0] max //output line for maximum value 
     );
 
-
+//at every negative edge of the clock, find the minimum and maximum value
 always@(negedge clk) begin
-    if (enable == 1'b1) begin
-        if (sound_Value < min) begin
-            min = sound_Value;
+    if (enable == 1'b1) begin //if the enable line is a logic hogh
+        if (sound_Value < min) begin //is the audio sample less than the minimum value
+            min = sound_Value; //set the minimum value to the audio sample 
         end
-        if (sound_Value > max) begin
-            max = sound_Value;
+        if (sound_Value > max) begin //is the audio sample greater than the maximum value
+            max = sound_Value; //set the maximum value to the audio sample
         end 
-    end else begin
-        min = sound_Value;
-        max = sound_Value;
+    end else begin //for the case when enable is a logic low
+        min = sound_Value; //set the minimum value to an arbitrary audio sample 
+        max = sound_Value; //set the maximum value to an arbitrary audio sample
     end
 end
 
