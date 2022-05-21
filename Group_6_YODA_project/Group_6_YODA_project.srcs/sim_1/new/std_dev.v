@@ -35,8 +35,8 @@ module std_dev(
 always @(negedge clk) begin
     if (done == 1'b1) begin //if done is a logic high (i.e. the minimum and maximum values have been found
         if (interval == 1) begin //if there is only 1 interval segment
-            std_min_1 = min_1; 
-            std_max_1 = max_1; 
+            std_min_1 = min_1; //set the output line to the minimum value
+            std_max_1 = max_1; //set the output line to the maximum value
         end else if (interval == 2) begin //if there are 2 interval segments
             min_mean = (min_1 + min_2)*0.5; //find the minimum mean
             max_mean = (max_1 + max_2)*0.5; //find the maximum mean
@@ -47,16 +47,16 @@ always @(negedge clk) begin
 //            $display("%d %d",min_sum, max_sum);
 //            $display("%d %d",min_std_dev, max_std_dev);
             if ((min_1 <= min_mean+min_std_dev) && (min_1 >= min_mean-min_std_dev)) begin //if the first minimum value is within 1 standard deviation
-                std_min_1 = min_1; 
+                std_min_1 = min_1; //set the output line to the minimum value
             end
             if ((min_2 <= min_mean+min_std_dev) && (min_2 >= min_mean-min_std_dev)) begin //if the second minimum value is within 1 standard deviation
-                std_min_2 = min_2; 
+                std_min_2 = min_2; //set the output line to the minimum value
             end
             if ((max_1 <= max_mean+max_std_dev) && (max_1 >= max_mean-max_std_dev)) begin //if the first maximum value is within 1 standard deviation
-                std_max_1 = max_1; 
+                std_max_1 = max_1; //set the output line to the maximum value
             end
             if ((max_2 <= max_mean+max_std_dev) && (max_2 >= max_mean-max_std_dev)) begin //if the second maximum value is within 1 standard deviation
-                std_max_2 = max_2; 
+                std_max_2 = max_2; //set the output line to the maximum value
             end
         end else if (interval == 3) begin //if there are 3 interval segments
             min_mean = (min_1 + min_2 + min_3)*(0.33333333); //find the minimum mean
@@ -70,22 +70,22 @@ always @(negedge clk) begin
 //             $display("%d %d",min_mean, max_mean);
 //             $display("%d %d",min_std_dev, max_std_dev);
             if ((min_1 <= min_mean+min_std_dev) && (min_1 >= min_mean-min_std_dev)) begin //if the first minimum value is within 1 standard deviation
-                std_min_1 = min_1; 
+                std_min_1 = min_1; //set the output line to the minimum value
             end
             if ((min_2 <= min_mean+min_std_dev) && (min_2 >= min_mean-min_std_dev)) begin //if the second minimum value is within 1 standard deviation
-                std_min_2 = min_2; 
+                std_min_2 = min_2; //set the output line to the minimum value
             end
             if ((min_3 <= min_mean+min_std_dev) && (min_3 >= min_mean-min_std_dev)) begin //if the third minimum value is within 1 standard deviation
-                std_min_3 = min_3; 
+                std_min_3 = min_3; //set the output line to the minimum value
             end
             if ((max_1 <= max_mean+max_std_dev) && (max_1 >= max_mean-max_std_dev)) begin //if the first maximum value is within 1 standard deviation
-                std_max_1 = max_1; 
+                std_max_1 = max_1; //set the output line to the maximum value
             end
             if ((max_2 <= max_mean+max_std_dev) && (max_2 >= max_mean-max_std_dev)) begin //if the second maximum value is within 1 standard deviation
-                std_max_2 = max_2; 
+                std_max_2 = max_2; //set the output line to the maximum value
             end
             if ((max_3 <= max_mean+max_std_dev) && (max_3 >= max_mean-max_std_dev)) begin //if the third maximum value is within 1 standard deviation
-                std_max_3 = max_3; 
+                std_max_3 = max_3; //set the output line to the maximum value
             end
             
         end
