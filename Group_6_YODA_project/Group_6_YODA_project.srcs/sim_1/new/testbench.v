@@ -1,13 +1,13 @@
 `timescale 1ns / 1ps
 
 module testbench;
-    reg clk;
-    wire [31:0] sine_1, sine_2, sine_3, min_1, max_1, min_2, max_2, min_3, max_3;
-    wire enable, done;
-    wire [31:0] std_min_1, std_min_2, std_min_3, std_max_1, std_max_2, std_max_3;
-    reg [2:0] interval = 1;
+    reg clk; //defines the clock line
+    wire [31:0] sine_1, sine_2, sine_3, min_1, max_1, min_2, max_2, min_3, max_3; //defines the audio_gen output wires, and min_max output wires
+    wire enable, done; //defines the enable and done wires
+    wire [31:0] std_min_1, std_min_2, std_min_3, std_max_1, std_max_2, std_max_3; //defines the std_dev output wires
+    reg [2:0] interval = 1; // set the number of intervals (with a maximum of three intervals)
     
-    //initates and connects the sine generator to the testBench
+    //initates and connects the audio generator to the testbench
     audio_gen baseAudioGen(
         .clk(clk),
         .interval(interval),
@@ -18,6 +18,7 @@ module testbench;
         .sine_3(sine_3)
     );
     
+    //initiates and connects the first instance of the min_max module to the testbench and audio_gen
     min_max min_max_1(
     .clk(clk),
     .enable(enable),
@@ -26,6 +27,7 @@ module testbench;
     .max(max_1)
     );
     
+    //initiates and connects the second instance of the min_max module to the testbench and audio_gen
     min_max min_max_2(
     .clk(clk),
     .enable(enable),
@@ -34,6 +36,7 @@ module testbench;
     .max(max_2)
     );
     
+    //initiates and connects the third instance of the min_max module to the testbench and audio_gen
      min_max min_max_3(
     .clk(clk),
     .enable(enable),
@@ -42,6 +45,7 @@ module testbench;
     .max(max_3)
     );
     
+    //initiates and connects the std_dev module to the testbench, audio_gen and min_max modules
     std_dev std_dev_1(
     .clk(clk),
     .done(done),
@@ -60,20 +64,18 @@ module testbench;
     .std_max_3(std_max_3)
     );
     
-    //frequency control
-    parameter freq = 100000000; //100 MHz
-    parameter SIZE = 441000; 
-    parameter clockRate = 0.001; //clock time (make this an output from the sine modules)
+    parameter SIZE = 441000; //sets the size of the audio file
+    parameter clockRate = 0.001; //initialises the clock rate
     
-    //Generate a clock with the above frequency control
+    //Generate the clock using an initial block
     initial
     begin 
     //$display("------------------------------");
     //$display("sine     min        max");
     //$display("------------------------------");
     //$monitor("%d    %d      %d",sine,min,max);
-    clk = 1'b0;
+    clk = 1'b0; //set the clock to a logic low initially
     end
-    always #clockRate clk = ~clk; //#1 is one nano second delay (#x controlls the speed)
+    always #clockRate clk = ~clk; //controls the speed at which the clock will operate
     
 endmodule
