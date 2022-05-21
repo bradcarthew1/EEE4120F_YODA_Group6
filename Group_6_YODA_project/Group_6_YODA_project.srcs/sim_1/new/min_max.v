@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: University of Cape Town
-// Engineer: Bradley Carthew, Nathanael Thomas, Thomas Stern, Mohammed-Bilaal Sheik Hoosen
-// 
+// Engineers: Bradley Carthew, Nathanael Thomas, Thomas Stern, Mohammed-Bilaal Sheik Hoosen
+// Group: 6
 // Create Date: 10.05.2022 20:04:06
 // Design Name: Minimum and Maximum Value Finder
 // Module Name: min_max
