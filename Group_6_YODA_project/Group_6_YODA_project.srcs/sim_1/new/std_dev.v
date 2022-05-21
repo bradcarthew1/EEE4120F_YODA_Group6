@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: University of Cape Town
-// Engineer: Bradley Carthew, Nathanael Thomas, Thomas Stern, Mohammed-Bilaal Sheik Hoosen
-// 
+// Engineers: Bradley Carthew, Nathanael Thomas, Thomas Stern, Mohammed-Bilaal Sheik Hoosen
+// Group: 6
 // Create Date: 05/18/2022 02:13:08 PM
 // Design Name: Standard Deviation Calculator
 // Module Name: std_dev
