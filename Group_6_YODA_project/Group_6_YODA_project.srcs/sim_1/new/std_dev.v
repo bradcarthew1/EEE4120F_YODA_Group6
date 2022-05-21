@@ -44,8 +44,6 @@ always @(negedge clk) begin
             max_sum = (max_1-max_mean)**2 + (max_2-max_mean)**2; //find the sum of the squares of the maximum values
             min_std_dev = (min_sum*0.5)**(0.5); //find the minimum standard deviation
             max_std_dev = (max_sum*0.5)**(0.5); //find the maximum standard deviation
-//            $display("%d %d",min_sum, max_sum);
-//            $display("%d %d",min_std_dev, max_std_dev);
             if ((min_1 <= min_mean+min_std_dev) && (min_1 >= min_mean-min_std_dev)) begin //if the first minimum value is within 1 standard deviation
                 std_min_1 = min_1; //set the output line to the minimum value
             end
@@ -61,14 +59,10 @@ always @(negedge clk) begin
         end else if (interval == 3) begin //if there are 3 interval segments
             min_mean = (min_1 + min_2 + min_3)*(0.33333333); //find the minimum mean
             max_mean = (max_1 + max_2 + max_3)*(0.33333333); //find the maximum mean
-//            $display("%d %d %d",min_1,min_2,min_3);
-//            $display("%d %d %d",max_1,max_2,max_3);
             min_sum = (min_1-min_mean)**2 + (min_2-min_mean)**2+ (min_3-min_mean)**2; //find the sum of the squares of the minimum values
             max_sum = (max_1-max_mean)**2 + (max_2-max_mean)**2+ (max_3-max_mean)**2; //find the sum of the squares of the maximum values
             min_std_dev = (min_sum*0.33333333)**(0.5); //find the minimum standard deviation
             max_std_dev = (max_sum*0.33333333)**(0.5); //find the maximum standard deviation
-//             $display("%d %d",min_mean, max_mean);
-//             $display("%d %d",min_std_dev, max_std_dev);
             if ((min_1 <= min_mean+min_std_dev) && (min_1 >= min_mean-min_std_dev)) begin //if the first minimum value is within 1 standard deviation
                 std_min_1 = min_1; //set the output line to the minimum value
             end
