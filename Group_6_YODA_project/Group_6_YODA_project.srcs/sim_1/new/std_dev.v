@@ -1,15 +1,15 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: University of Cape Town
+// Engineer: Bradley Carthew, Nathanael Thomas, Thomas Stern, Mohammed-Bilaal Sheik Hoosen
 // 
 // Create Date: 05/18/2022 02:13:08 PM
-// Design Name: 
+// Design Name: Standard Deviation Calculator
 // Module Name: std_dev
-// Project Name: 
+// Project Name: EEE4120F YODA Project
 // Target Devices: 
 // Tool Versions: 
-// Description: 
+// Description: Calculates the mean of the values provided to the module, and finds the values within one standard deviation of the mean.
 // 
 // Dependencies: 
 // 
@@ -21,18 +21,19 @@
 
 
 module std_dev(
-    input clk,
-    input done,
-    input wire [1:0] interval,
-    input wire [31:0] min_1, max_1, min_2, max_2, min_3, max_3,
-    output reg [31:0] std_min_1, std_max_1, std_min_2, std_max_2, std_min_3, std_max_3
+    input clk, //clock line
+    input done, //done line
+    input wire [1:0] interval, //number of interval segments
+    input wire [31:0] min_1, max_1, min_2, max_2, min_3, max_3, //minimum and maximum values
+    output reg [31:0] std_min_1, std_max_1, std_min_2, std_max_2, std_min_3, std_max_3 //output values within one standard deviation of the mean
     );
     
-    reg [31:0] min_mean, max_mean, min_std_dev, max_std_dev;
-    reg [31:0] min_sum, max_sum;
+    reg [31:0] min_mean, max_mean, min_std_dev, max_std_dev; //defines the registers for the minimum and maximum mean, and the minimum and maximum standard deviation
+    reg [31:0] min_sum, max_sum; //defines the registers for the sum of the minimum and the sum of the maximum values
     
+//at negative clock edge find the values within one standard deviation of the mean    
 always @(negedge clk) begin
-    if (done == 1'b1) begin
+    if (done == 1'b1) begin //if done is a logic high (i.e. the minimum and maximum values have been found
         if (interval == 1) begin
             std_min_1 = min_1;
             std_max_1 = max_1;
