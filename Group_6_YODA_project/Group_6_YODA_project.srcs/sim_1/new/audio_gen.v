@@ -41,9 +41,9 @@ initial begin
     l = 0;
     k = 0;
     
-    if (interval == 2) begin //if there are two interval segments
+    if (interval == 2) begin //if there are 2 interval segments
         k = (SIZE/2); //initialises the starting position of the second rom iteration
-    end else if (interval == 3) begin  //if there are three interval segments      
+    end else if (interval == 3) begin  //if there are 3 interval segments      
         l = (SIZE/3)*2; //initialises the starting position of the third rom iteration
         k = (SIZE/3); //initialises the starting position of the second rom iteration
     end
@@ -54,50 +54,51 @@ end
     
 //at every positive edge of the clock, output a sample from the audio file
 always@(posedge clk) begin
-    if (interval == 1) begin
-        sine_1 = rom_memory[i];
-    end else if (interval == 2) begin
-        sine_1 = rom_memory[i];
-        sine_2 = rom_memory[k];
-    end else if (interval == 3) begin
-        sine_1 = rom_memory[i];
-        sine_2 = rom_memory[k];
-        sine_3 = rom_memory[l];
+    if (interval == 1) begin //if there is only 1 segment (i.e. the audio file is to be analysed as one segment)
+        sine_1 = rom_memory[i]; //set the first and only output line to a value from rom memory
+    end else if (interval == 2) begin //if there are 2 interval segments
+        sine_1 = rom_memory[i]; //set the first output line to a value from rom memory
+        sine_2 = rom_memory[k]; //set the second output line to a value from rom memory
+    end else if (interval == 3) begin //if there are 3 interval segments
+        sine_1 = rom_memory[i]; //set the first output line to a value from rom memory
+        sine_2 = rom_memory[k]; //set the second output line to a value from rom memory
+        sine_3 = rom_memory[l]; //set the third output line to a value from rom memory
     end
     
+    //initialises the output lines before sending the output to other modules
     if (j == 1) begin
-        enable = 1'b1;
+        enable = 1'b1; //set the enable line to a logic high
     end
     
-    i = i + 1;
-    j = j + 1;
+    i = i + 1; //increases the rom position variable
+    j = j + 1; //increases the enable position variable
     
-    if (interval == 1) begin
-        if (i == SIZE) begin
-            done = 1'b1;
-            i = 0;
+    if (interval == 1) begin //if there is 1 interval segment
+        if (i == SIZE) begin //if the rom position variable is at its maximum value
+            done = 1'b1; //set the done line to a logic high
+            i = 0; //set the rom position variable to its initial value
         end
-    end else if (interval == 2) begin
-        k = k + 1;
-        if(k == SIZE) begin
-            done = 1'b1;
-            k = SIZE/2;
-        end if(i == SIZE/2) begin
-            done = 1'b1;
-            i = 0;
+    end else if (interval == 2) begin //if there are 2 interval segments
+        k = k + 1; //increases the rom position variable
+        if(k == SIZE) begin //if the rom position variable is at its maximum value
+            done = 1'b1; //set the done line to a logic high
+            k = SIZE/2; //set the rom position variable to its initial value
+        end if(i == SIZE/2) begin //if the rom position variable is at its maximum value
+            done = 1'b1; //set the done line to a logic high
+            i = 0; //set the rom position variable to its initial value
             end
-    end else if (interval == 3) begin
-        k = k+ 1;
-        l = l+ 1;
-        if(k == 2*SIZE/3) begin
-            k = SIZE/3;
-            done = 1'b1;
-        end if (l == SIZE) begin
-            l = 2*(SIZE/3);
-            done = 1'b1;
-        end if(i == SIZE/3) begin
-            i = 0;
-            done = 1'b1;
+    end else if (interval == 3) begin //if there are 3 interval segments
+        k = k+ 1; //increases the rom position variable
+        l = l+ 1; //increases the rom position variable
+        if(k == 2*SIZE/3) begin //if the rom position variable is at its maximum value
+            k = SIZE/3; //set the rom position variable to its initial value
+            done = 1'b1; //set the done line to a logic high
+        end if (l == SIZE) begin //if the rom position variable is at its maximum value
+            l = 2*(SIZE/3); //set the rom position variable to its initial value
+            done = 1'b1; //set the done line to a logic high
+        end if(i == SIZE/3) begin //if the rom position variable is at its maximum value
+            i = 0; //set the rom position variable to its initial value
+            done = 1'b1; //set the done line to a logic high
             end
     end
 end
