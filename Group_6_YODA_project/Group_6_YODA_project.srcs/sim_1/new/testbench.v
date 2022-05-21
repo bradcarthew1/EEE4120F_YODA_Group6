@@ -69,11 +69,7 @@ module testbench;
     
     //Generate the clock using an initial block
     initial
-    begin 
-    //$display("------------------------------");
-    //$display("sine     min        max");
-    //$display("------------------------------");
-    //$monitor("%d    %d      %d",sine,min,max);
+    begin
     clk = 1'b0; //set the clock to a logic low initially
     end
     always #clockRate clk = ~clk; //controls the speed at which the clock will operate
