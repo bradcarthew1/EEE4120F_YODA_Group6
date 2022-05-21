@@ -21,11 +21,11 @@
 
 
 module min_max(
-    input clk,
-    input wire enable,
-    input wire [31:0] sound_Value,
-    output reg [31:0] min,
-    output reg [31:0] max
+    input clk, //clock line
+    input wire enable, //enable line
+    input wire [31:0] sound_Value, //audio sample (from auido_gen module)
+    output reg [31:0] min, //output line for minimum value 
+    output reg [31:0] max //output line for maximum value 
     );
 
 
